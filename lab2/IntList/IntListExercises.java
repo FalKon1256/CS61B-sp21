@@ -14,6 +14,8 @@ public class IntListExercises {
             head.first += c;
             head = head.rest;
         }
+        /* For last element of the IntList */
+        head.first += c;
     }
 
     /**
@@ -26,6 +28,14 @@ public class IntListExercises {
     public static void setToZeroIfMaxFEL(IntList L) {
         IntList p = L;
         while (p != null) {
+
+            /* Separating into 2 individual variables is more easy to debug the test
+            int currentMax = max(p);
+            boolean firstEqualsLast = firstDigitEqualsLastDigit(currentMax);
+            if (firstEqualsLast) {
+                p.first = 0;
+            } */
+
             if (firstDigitEqualsLastDigit(max(p))) {
                 p.first = 0;
             }
@@ -51,7 +61,7 @@ public class IntListExercises {
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
         int lastDigit = x % 10;
-        while (x > 10) {
+        while (x >= 10) {
             x = x / 10;
         }
         int firstDigit = x % 10;
@@ -77,6 +87,7 @@ public class IntListExercises {
             lst.first *= lst.first;
         }
 
-        return currElemIsPrime || squarePrimes(lst.rest);
+        /* Need to put each recursion before "OR" operator */
+        return squarePrimes(lst.rest) || currElemIsPrime;
     }
 }
