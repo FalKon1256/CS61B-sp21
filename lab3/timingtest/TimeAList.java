@@ -26,7 +26,7 @@ public class TimeAList {
 
         // Create ALists for adding & resizing, N for largest size, powerCount for marking different sizes
         AList<Integer> arrayList = new AList<>();
-        int N = 12800000;
+        int N = 128000;
         int powerCount = 0;
 
         // Create ALists for tracing size of element, runtimes, operation counts
