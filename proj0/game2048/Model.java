@@ -166,7 +166,7 @@ public class Model extends Observable {
                              *  1. Record the tile value.
                              *  2. Check if the previous tile have merged.
                              *     If merged:
-                             *     1. top movable position - 1
+                             *     1. Top movable position - 1
                              *  3. Move the tile to top movable position.
                              *  4. Check if the tile moves.
                              *     If tile moves:
@@ -205,11 +205,10 @@ public class Model extends Observable {
             merged = false;
         }
 
-        checkGameOver();
-
         // Set the observing direction back to north
         board.setViewingPerspective(Side.NORTH);
 
+        checkGameOver();
         if (changed) {
             setChanged();
         }
